@@ -2,7 +2,7 @@
  * Basic class for a value which reports to listeners when it changes.
  * @template T
  */
- export class Observable {
+export class Observable {
     /**
      * @param {T} value The initial value.
      */
