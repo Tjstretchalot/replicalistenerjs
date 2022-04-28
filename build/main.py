@@ -18,7 +18,7 @@ def main():
 
         with open('../src/replica_listener.js', 'r') as f_in:
             for idx, line in enumerate(f_in):
-                if idx > 0:
+                if idx > 0 and not line.strip().endswith('@@type-hint'):
                     f_out.write(line)
 
     with open('../out/rl.js.min', 'w') as f_out:
