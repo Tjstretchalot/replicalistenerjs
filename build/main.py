@@ -6,6 +6,12 @@ from jsmin import jsmin
 def main():
     os.makedirs('../out', exist_ok=True)
     with open('../out/rl.js', 'w') as f_out:
+        with open('../LICENSE', 'r') as f_in:
+            print('/**', file=f_out)
+            for line in f_in:
+                print(f' * {line.strip()}', file=f_out)
+            print(' */\n', file=f_out)
+
         with open('../src/observable.js', 'r') as f_in:
             for line in f_in:
                 f_out.write(line)
